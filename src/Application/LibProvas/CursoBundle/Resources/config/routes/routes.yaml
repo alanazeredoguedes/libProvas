@@ -1,0 +1,3 @@
+libprovas_curso:
+    resource: "@ApplicationLibProvasCursoBundle/Controller/"
+    type:     annotation
