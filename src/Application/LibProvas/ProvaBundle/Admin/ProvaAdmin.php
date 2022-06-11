@@ -2,6 +2,7 @@
 namespace App\Application\LibProvas\ProvaBundle\Admin;
 
 
+use App\Application\LibProvas\TipoProvaBundle\Entity\TipoProva;
 use App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina;
 use App\Application\LibProvas\ProfessorBundle\Entity\Professor;
 use App\Application\LibProvas\ProvaBundle\Entity\Prova;
@@ -68,7 +69,7 @@ class ProvaAdmin extends AbstractAdmin
 
     public function getExportFields()
     {
-        return array('Id' => 'id', 'Data' => 'data', 'Ativo' => 'ativo', 'Disciplina' => 'disciplina.nome', 'Professor' => 'professor.nome', );
+        return array('Id' => 'id', 'Data' => 'data', 'Ativa' => 'ativa', 'TipoProva' => 'tipoProva.tipo', 'Disciplina' => 'disciplina.nome', 'Professor' => 'professor.nome', );
     }
     
     protected function configureRoutes(RouteCollection $collection)
@@ -84,8 +85,16 @@ class ProvaAdmin extends AbstractAdmin
             ->add('data', null, [
                 'label' => 'Data',
             ])
-            ->add('ativo', null, [
-                'label' => 'Ativo',
+            ->add('ativa', null, [
+                'label' => 'Ativa',
+            ])
+            ->add('tipoProva', null, [], EntityType::class,[
+                'class' => TipoProva::class,
+                'label' => 'TipoProva',
+                'multiple' => true,
+                'choice_label' => function ($tipoProva) {
+                    return $tipoProva->getTipo();
+                },
             ])
             ->add('disciplina', null, [], EntityType::class,[
                 'class' => Disciplina::class,
@@ -118,12 +127,16 @@ class ProvaAdmin extends AbstractAdmin
                 'format' => 'd/m/Y',
                 
             ])
-            ->add('ativo', null, [
-                'label' => 'Ativo',
+            ->add('ativa', null, [
+                'label' => 'Ativa',
                 
                  
                 'editable' => true,
                 'inverse'  => false,
+            ])
+            ->add('tipoProva', null, [
+                'label' => 'TipoProva',
+                'associated_property' => 'tipo',
             ])
             ->add('disciplina', null, [
                 'label' => 'Disciplina',
@@ -156,35 +169,41 @@ class ProvaAdmin extends AbstractAdmin
             ])
             ->add('data', DateType::class, [
                 'label' => 'Data:',
-                'required' => true,
+                'required' => false,
                 'widget' => 'single_text',
-                'constraints' => [ 
-                    new NotNull(),
-             ],
+                'constraints' => [  ],
                 'help' => '',
             ])
-            ->add('ativo', CheckboxType::class, [
-                'label' => 'Ativo:',
+            ->add('ativa', CheckboxType::class, [
+                'label' => 'Ativa:',
                 'required' => false,
                 
                 'constraints' => [  ],
                 'help' => '',
             ])
+            ->add('tipoProva', ModelType::class,[
+                'class' => TipoProva::class,
+                'property' => 'tipo',
+                'label' => 'TipoProva:',
+                'required' => true,
+                'expanded' => false,
+                'btn_add' => false,
+                'help' => '',
+            ])
             ->add('disciplina', ModelType::class,[
                 'class' => Disciplina::class,
-                'property' => 'nome',
+                'property' => 'disciplinaGradeCurso',
                 'label' => 'Disciplina:',
-                'required' => false,
-                
+                'required' => true,
                 'expanded' => false,
+                'btn_add' => false,
                 'help' => '',
             ])
             ->add('professor', ModelType::class,[
                 'class' => Professor::class,
                 'property' => 'nome',
                 'label' => 'Professor:',
-                'required' => false,
-                
+                'required' => true,
                 'expanded' => false,
                 'help' => '',
             ])
@@ -202,9 +221,12 @@ class ProvaAdmin extends AbstractAdmin
                 'label' => 'Data:',
                 'format' => 'd/m/Y',
             ])
-            ->add('ativo', null, [
-                'label' => 'Ativo:',
+            ->add('ativa', null, [
+                'label' => 'Ativa:',
                 
+            ])
+            ->add('tipoProva.tipo', null, [
+                'label' => 'TipoProva:',
             ])
             ->add('disciplina.nome', null, [
                 'label' => 'Disciplina:',

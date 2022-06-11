@@ -2,15 +2,12 @@
 
 namespace App\Application\LibProvas\DisciplinaBundle\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\ORM\Mapping as ORM;
 use App\Application\Sonata\MediaBundle\Entity\Gallery;
 use App\Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Core\Annotation\ApiResource;
-
-
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints as Assert;
 
 
 
@@ -19,10 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource()
  * @ORM\Table(name="disciplina")
  * @ORM\Entity(repositoryClass="App\Application\LibProvas\DisciplinaBundle\Repository\DisciplinaRepository")
- * @UniqueEntity(fields={"codigo"}) 
-
  */
-
 class Disciplina
 {
     /**
@@ -34,16 +28,23 @@ class Disciplina
     private $id;
 
     /**
-     *
-     * @ORM\Column(name="periodo", type="integer", nullable=true)
+     * Many Disciplina has One GradeCurricular (GradeCurricular).
+     * @ORM\ManyToOne(targetEntity="App\Application\LibProvas\GradeCurricularBundle\Entity\GradeCurricular", inversedBy="disciplinas")
+     * @ORM\JoinColumn(name="grade_curricular_id", referencedColumnName="id")
      */
-    private $periodo;
+    private $gradeCurricular;
 
     /**
      *
-     * @ORM\Column(name="codigo", type="string", unique=true)
+     * @ORM\Column(name="codigo", type="string")
      */
     private $codigo;
+
+    /**
+     *
+     * @ORM\Column(name="periodo", type="integer")
+     */
+    private $periodo;
 
     /**
      *
@@ -56,12 +57,6 @@ class Disciplina
      * @ORM\Column(name="ativo", type="boolean", nullable=true)
      */
     private $ativo;
-
-    /**
-     *
-     * @ORM\Column(name="grade", type="string")
-     */
-    private $grade;
     
     public function __construct() {
         
@@ -81,14 +76,20 @@ class Disciplina
     }
     
    
-    public function getPeriodo()
+   /**
+    * @return mixed
+    */
+    public function getGradeCurricular()
     {
-        return $this->periodo;
+        return $this->gradeCurricular;
     }
     
-    public function setPeriodo($periodo): void
+    /**
+     * @param mixed $gradeCurricular
+     */
+    public function setGradeCurricular($gradeCurricular): void
     {
-        $this->periodo = $periodo;
+        $this->gradeCurricular = $gradeCurricular;
     }
     
    
@@ -100,6 +101,17 @@ class Disciplina
     public function setCodigo($codigo): void
     {
         $this->codigo = $codigo;
+    }
+    
+   
+    public function getPeriodo()
+    {
+        return $this->periodo;
+    }
+    
+    public function setPeriodo($periodo): void
+    {
+        $this->periodo = $periodo;
     }
     
    
@@ -123,15 +135,9 @@ class Disciplina
     {
         $this->ativo = $ativo;
     }
-    
-   
-    public function getGrade()
-    {
-        return $this->grade;
+
+    public function getDisciplinaGradeCurso(){
+        return $this->getCodigo() . ' - ' . $this->getNome() . ' - ' . $this->getGradeCurricular()->getGrade() . ' - ' . $this->getGradeCurricular()->getCurso()->getNome() ;
     }
-    
-    public function setGrade($grade): void
-    {
-        $this->grade = $grade;
-    }
+
     }

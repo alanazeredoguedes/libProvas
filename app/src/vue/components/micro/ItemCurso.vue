@@ -1,11 +1,11 @@
 <template>
     <div class="ItemCursoComponent col-xs-12 col-sm-4 ">
-      <a href="javascript:void(0)">
+      <a href="javascript:void(0)" @click="escolhaCurso" style="color: white;">
         <div class="fun-fact gray-default">
-          <i class="lnr lnr-star"></i>
-          <h4>Awards Won</h4>
-          <span class="fun-fact-block-value">15</span>
-          <span class="fun-fact-block-text"></span>
+<!--          <i class="lnr lnr-star"></i>-->
+          <h4>{{ curso.nome }}</h4>
+          <span class="fun-fact-block-value" style="">{{ curso.numeroDisciplinas }}</span>
+          <span class="fun-fact-block-text" style="">Disciplinas</span>
         </div>
       </a>
     </div>
@@ -20,7 +20,7 @@ export default {
 
   components: {  },
 
-  props: [ '', '', ],
+  props: [ 'curso', '', ],
 
   data(){
     return {
@@ -29,7 +29,10 @@ export default {
   },
 
   methods: {
-
+    escolhaCurso(){
+      this.$root.cursoSelecionado = this.curso;
+      this.$root.changeMenu('disciplinas')
+    }
   }
 
 }

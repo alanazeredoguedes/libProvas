@@ -9,18 +9,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints as Assert;
-
-
 
 /**
  * Curso
  * @ApiResource()
  * @ORM\Table(name="curso")
  * @ORM\Entity(repositoryClass="App\Application\LibProvas\CursoBundle\Repository\CursoRepository")
- * @UniqueEntity(fields={"nome"}) 
-
  */
 
 class Curso
@@ -35,18 +29,35 @@ class Curso
 
     /**
      *
-     * @ORM\Column(name="nome", type="string", unique=true)
+     * @ORM\Column(name="codigo", type="string")
+     */
+    private $codigo;
+
+    /**
+     *
+     * @ORM\Column(name="nome", type="string")
      */
     private $nome;
+
+    /**
+     *
+     * @ORM\Column(name="descricao", type="string", nullable=true)
+     */
+    private $descricao;
 
     /**
      *
      * @ORM\Column(name="ativo", type="boolean", nullable=true)
      */
     private $ativo;
-    
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Application\LibProvas\GradeCurricularBundle\Entity\GradeCurricular", mappedBy="curso")
+     */
+    private $gradeCurricular;
+
     public function __construct() {
-        
+        $this->gradeCurricular = new ArrayCollection();
     }
          
     /**
@@ -63,6 +74,17 @@ class Curso
     }
     
    
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+    
+    public function setCodigo($codigo): void
+    {
+        $this->codigo = $codigo;
+    }
+    
+   
     public function getNome()
     {
         return $this->nome;
@@ -71,6 +93,17 @@ class Curso
     public function setNome($nome): void
     {
         $this->nome = $nome;
+    }
+    
+   
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+    
+    public function setDescricao($descricao): void
+    {
+        $this->descricao = $descricao;
     }
     
    
@@ -83,4 +116,30 @@ class Curso
     {
         $this->ativo = $ativo;
     }
+
+
+    public function getGradeCurricular()
+    {
+        return $this->gradeCurricular;
+    }
+
+    public function setGradeCurricular($gradeCurricular): void
+    {
+        $this->gradeCurricular = $gradeCurricular;
+    }
+
+    public function getNumeroGrades(){
+      return count( $this->getGradeCurricular() );
+    }
+
+    public function getNumeroDisciplinas(){
+        $total = 0;
+        foreach ($this->getGradeCurricular() as $gradeCurricular){
+            $total +=  $gradeCurricular->getNumeroDisciplinas();
+        }
+        return $total;
+    }
+
+
+
     }

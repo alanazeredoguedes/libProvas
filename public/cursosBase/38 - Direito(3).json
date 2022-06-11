@@ -1,0 +1,308 @@
+{
+    "codigo": "38",
+    "nome": "Direito",
+    "habilitacao": "Bacharel(a) em Direito",
+    "matrizCurricular": "Grade 4A de Direito",
+    "disciplinas": [
+        {
+            "periodo": "1",
+            "codigo": "601HID",
+            "nome": "História do Direito"
+        },
+        {
+            "periodo": "1",
+            "codigo": "601IND",
+            "nome": "Introdução ao Direito"
+        },
+        {
+            "periodo": "1",
+            "codigo": "601TEP",
+            "nome": "Teoria Geral do Estado e da Política"
+        },
+        {
+            "periodo": "1",
+            "codigo": "605ECD",
+            "nome": "Economia e Direito"
+        },
+        {
+            "periodo": "1",
+            "codigo": "703FCS",
+            "nome": "Fundamentos das Ciências Sociais"
+        },
+        {
+            "periodo": "1",
+            "codigo": "900ATI1",
+            "nome": "Atividade Integradora I"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601CDF",
+            "nome": "Teoria da Constituição e Direitos Fundamentais Sociais"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601FGD",
+            "nome": "Filosofia Geral e do Direito"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601PAD",
+            "nome": "Psicologia Aplicada ao Direito"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601TNC",
+            "nome": "Teoria da Norma e do Crime"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601TRJ",
+            "nome": "Teoria Geral da Relação Jurídica Privada"
+        },
+        {
+            "periodo": "2",
+            "codigo": "900ATI2",
+            "nome": "Atividade Integradora II"
+        },
+        {
+            "periodo": "3",
+            "codigo": "601ETC",
+            "nome": "Teoria da Empresa e Títulos de Créditos"
+        },
+        {
+            "periodo": "3",
+            "codigo": "601JOP",
+            "nome": "Jurisdição Constitucional, Organização do Estado e dos Poderes"
+        },
+        {
+            "periodo": "3",
+            "codigo": "601TGP",
+            "nome": "Teoria Geral do Processo"
+        },
+        {
+            "periodo": "3",
+            "codigo": "601TOP",
+            "nome": "Teoria da Pena"
+        },
+        {
+            "periodo": "3",
+            "codigo": "601TRO",
+            "nome": "Tráfego Obrigacional"
+        },
+        {
+            "periodo": "3",
+            "codigo": "900ATI3",
+            "nome": "Atividade Integradora III"
+        },
+        {
+            "periodo": "4",
+            "codigo": "601CRE1",
+            "nome": "Crimes em Espécie I"
+        },
+        {
+            "periodo": "4",
+            "codigo": "601DIC",
+            "nome": "Direitos dos Contratos"
+        },
+        {
+            "periodo": "4",
+            "codigo": "601DIS",
+            "nome": "Direito Societário"
+        },
+        {
+            "periodo": "4",
+            "codigo": "601PJC",
+            "nome": "Persecução Penal, Jurisdição e Competência"
+        },
+        {
+            "periodo": "4",
+            "codigo": "601PRC",
+            "nome": "Processo de Conhecimento e Tutela Provisória"
+        },
+        {
+            "periodo": "4",
+            "codigo": "900ATI4",
+            "nome": "Atividade Integradora IV"
+        },
+        {
+            "periodo": "5",
+            "codigo": "601CRE2",
+            "nome": "Crimes em Espécie II"
+        },
+        {
+            "periodo": "5",
+            "codigo": "601DID",
+            "nome": "Direitos de Danos"
+        },
+        {
+            "periodo": "5",
+            "codigo": "601FRE",
+            "nome": "Falência e Recuperação de Empresa"
+        },
+        {
+            "periodo": "5",
+            "codigo": "601PPC",
+            "nome": "Processo Penal - Questões Prejudiciais e Processo Cautelar"
+        },
+        {
+            "periodo": "5",
+            "codigo": "601RPT",
+            "nome": "Recursos Cíveis e Processos nos Tribunais"
+        },
+        {
+            "periodo": "5",
+            "codigo": "900ATI5",
+            "nome": "Atividade Integradora V"
+        },
+        {
+            "periodo": "6",
+            "codigo": "601ACA",
+            "nome": "Administração Pública, Atos e Contratos Administrativos"
+        },
+        {
+            "periodo": "6",
+            "codigo": "601DEX",
+            "nome": "Direito Processual Civil - Execuções"
+        },
+        {
+            "periodo": "6",
+            "codigo": "601DTI",
+            "nome": "Direito do Trabalho Individual"
+        },
+        {
+            "periodo": "6",
+            "codigo": "601PIE",
+            "nome": "Processo de Conhecimento, Impugnações e Execução Penal"
+        },
+        {
+            "periodo": "6",
+            "codigo": "601TIT",
+            "nome": "Titularidades"
+        },
+        {
+            "periodo": "6",
+            "codigo": "900ATI6",
+            "nome": "Atividade Integradora VI"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601ABI",
+            "nome": "Agentes Públicos, Bens e Intervenção do Estado"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601DCT",
+            "nome": "Direito Coletivo do Trabalho"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601DIF",
+            "nome": "Direito das Famílias"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601DPE",
+            "nome": "Direito Processual Civil - Procedimentos Especiais"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601EDJ",
+            "nome": "Ética Geral e Deontologia Jurídica"
+        },
+        {
+            "periodo": "7",
+            "codigo": "601ESS1",
+            "nome": "Estágio Supervisionado I - NPJ"
+        },
+        {
+            "periodo": "7",
+            "codigo": "900ATI7",
+            "nome": "Atividade Integradora VII"
+        },
+        {
+            "periodo": "8",
+            "codigo": "601DRS",
+            "nome": "Direito das Sucessões"
+        },
+        {
+            "periodo": "8",
+            "codigo": "601ESS2",
+            "nome": "Estágio Supervisionado II - NPJ"
+        },
+        {
+            "periodo": "8",
+            "codigo": "601PRT",
+            "nome": "Processo do Trabalho"
+        },
+        {
+            "periodo": "8",
+            "codigo": "601TGT",
+            "nome": "Teoria Geral dos Tributos"
+        },
+        {
+            "periodo": "8",
+            "codigo": "900ATI8",
+            "nome": "Atividade Integradora VIII"
+        },
+        {
+            "periodo": "9",
+            "codigo": "601DPR",
+            "nome": "Direito Previdenciário"
+        },
+        {
+            "periodo": "9",
+            "codigo": "601ESS3",
+            "nome": "Estágio Supervisionado III - NPJ"
+        },
+        {
+            "periodo": "9",
+            "codigo": "601IPP",
+            "nome": "Direito Internacional Público e Privado"
+        },
+        {
+            "periodo": "9",
+            "codigo": "601MPJ",
+            "nome": "Metodologia da Pesquisa Jurídica"
+        },
+        {
+            "periodo": "9",
+            "codigo": "601TRE",
+            "nome": "Tributos em Espécie"
+        },
+        {
+            "periodo": "9",
+            "codigo": "900ATI9",
+            "nome": "Atividade Integradora IX"
+        },
+        {
+            "periodo": "10",
+            "codigo": "601ATC",
+            "nome": "Atividade Complementar"
+        },
+        {
+            "periodo": "10",
+            "codigo": "601DDC",
+            "nome": "Direitos Difusos e Coletivos (Direito Ambiental e Tutela do Consumidor)"
+        },
+        {
+            "periodo": "10",
+            "codigo": "601ESS4",
+            "nome": "Estágio Supervisionado IV - NPJ"
+        },
+        {
+            "periodo": "10",
+            "codigo": "601FCC",
+            "nome": "Formas Consensuais de Composição de Conflitos"
+        },
+        {
+            "periodo": "10",
+            "codigo": "601TCC",
+            "nome": "Trabalho de Conclusão de Curso"
+        },
+        {
+            "periodo": "10",
+            "codigo": "900ATI10",
+            "nome": "Atividade Integradora X"
+        }
+    ]
+}

@@ -1,0 +1,258 @@
+{
+    "codigo": "17",
+    "nome": "Sistemas de Informação",
+    "habilitacao": "Bacharel(a) em Sistemas de Informação",
+    "matrizCurricular": "Grade 4A de Sistemas de Informação",
+    "disciplinas": [
+        {
+            "periodo": "1",
+            "codigo": "101MAC1",
+            "nome": "Matemática Aplicada a Computação"
+        },
+        {
+            "periodo": "1",
+            "codigo": "102ATI1",
+            "nome": "Atividade Integradora I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "102BDD1",
+            "nome": "Banco de Dados I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "102DEW1",
+            "nome": "Desenvolvimento WEB I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "102DPC1",
+            "nome": "Programa de Computadores I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602FUG",
+            "nome": "Fundamentos em Gestão"
+        },
+        {
+            "periodo": "2",
+            "codigo": "102ATI2",
+            "nome": "Atividade Integradora II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "102BDD2",
+            "nome": "Banco de Dados II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "102DEW2",
+            "nome": "Desenvolvimento WEB II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "102DPC2",
+            "nome": "Programação de Computadores II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "102IAI1",
+            "nome": "Interface H M e Arquitetura da Informação"
+        },
+        {
+            "periodo": "2",
+            "codigo": "610GIC",
+            "nome": "Gestão da Informação e do Conhecimento"
+        },
+        {
+            "periodo": "3",
+            "codigo": "102ANR1",
+            "nome": "Análise de Requisitos"
+        },
+        {
+            "periodo": "3",
+            "codigo": "102AOC1",
+            "nome": "Arquitetura e Organização de Computadores"
+        },
+        {
+            "periodo": "3",
+            "codigo": "102ATI3",
+            "nome": "Atividade Integradora III"
+        },
+        {
+            "periodo": "3",
+            "codigo": "102DEW3",
+            "nome": "Desenvolvimento WEB III"
+        },
+        {
+            "periodo": "3",
+            "codigo": "102PDC3",
+            "nome": "Programação de Computadores III"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602EMP",
+            "nome": "Empreendedorismo"
+        },
+        {
+            "periodo": "4",
+            "codigo": "102AOO1",
+            "nome": "Análise Orientada a Objetos"
+        },
+        {
+            "periodo": "4",
+            "codigo": "102ATI4",
+            "nome": "Atividade Integradora IV"
+        },
+        {
+            "periodo": "4",
+            "codigo": "102EDD1",
+            "nome": "Estrutura de Dados"
+        },
+        {
+            "periodo": "4",
+            "codigo": "102SIO1",
+            "nome": "Sistemas Operacionais"
+        },
+        {
+            "periodo": "4",
+            "codigo": "605EAN",
+            "nome": "Economia"
+        },
+        {
+            "periodo": "4",
+            "codigo": "700ODH1",
+            "nome": "Optativa Humana: Humanidade e Sociedade"
+        },
+        {
+            "periodo": "5",
+            "codigo": "101EAG",
+            "nome": "Estatística Aplicada à Gestão"
+        },
+        {
+            "periodo": "5",
+            "codigo": "102ATI5",
+            "nome": "Atividade Integradora V"
+        },
+        {
+            "periodo": "5",
+            "codigo": "102EDS1",
+            "nome": "Engenharia de Software"
+        },
+        {
+            "periodo": "5",
+            "codigo": "102POA1",
+            "nome": "Programação Orientada a Objetos"
+        },
+        {
+            "periodo": "5",
+            "codigo": "102RDC1",
+            "nome": "Redes de Computadores"
+        },
+        {
+            "periodo": "5",
+            "codigo": "600DITS1",
+            "nome": "Direito Digital e Impacto da Tecnologia na Sociedade"
+        },
+        {
+            "periodo": "6",
+            "codigo": "102ATI6",
+            "nome": "Atividade Integradora VI"
+        },
+        {
+            "periodo": "6",
+            "codigo": "102DEM1",
+            "nome": "Desenvolvimento Mobile"
+        },
+        {
+            "periodo": "6",
+            "codigo": "102LDP1",
+            "nome": "Linguagens de Programação"
+        },
+        {
+            "periodo": "6",
+            "codigo": "102MCPI",
+            "nome": "Metodologia e Construção de Projetos de TI"
+        },
+        {
+            "periodo": "6",
+            "codigo": "102SISD1",
+            "nome": "Sistemas Distribuídos"
+        },
+        {
+            "periodo": "6",
+            "codigo": "602POPD",
+            "nome": "Pesquisa Operacional e o Processo Decisório"
+        },
+        {
+            "periodo": "7",
+            "codigo": "102ATI7",
+            "nome": "Atividade Integradora VII"
+        },
+        {
+            "periodo": "7",
+            "codigo": "102DWE1",
+            "nome": "Desenvolvimento WEB em Camadas"
+        },
+        {
+            "periodo": "7",
+            "codigo": "102PFM1",
+            "nome": "Projeto Final I - Metodologia"
+        },
+        {
+            "periodo": "7",
+            "codigo": "102QTS1",
+            "nome": "Qualidade e Teste de Software"
+        },
+        {
+            "periodo": "7",
+            "codigo": "102SAG1",
+            "nome": "Segurança, Auditoria e Governança"
+        },
+        {
+            "periodo": "7",
+            "codigo": "602GEP1",
+            "nome": "Gestão de Projetos"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102ACO1",
+            "nome": "Atividades Complementares"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102ATI8",
+            "nome": "Atividade Integradora VIII"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102ESU1",
+            "nome": "Estágio Supervisionado"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102PFC2",
+            "nome": "Projeto Final II - Construção"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102SAD1",
+            "nome": "Sistemas de Apoio a Decisão"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102TOPE1",
+            "nome": "Tópicos Especiais I"
+        },
+        {
+            "periodo": "8",
+            "codigo": "102TOPE2",
+            "nome": "Tópicos Especiais II"
+        },
+        {
+            "periodo": "8",
+            "codigo": "708PCO",
+            "nome": "Psicologia e Comportamento Organizacional"
+        }
+    ]
+}

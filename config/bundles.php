@@ -34,9 +34,12 @@ return [
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
     ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle::class => ['all' => true],
+    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     App\Application\LibProvas\CursoBundle\ApplicationLibProvasCursoBundle::class => ['all' => true],
     App\Application\LibProvas\DisciplinaBundle\ApplicationLibProvasDisciplinaBundle::class => ['all' => true],
     App\Application\LibProvas\ProvaBundle\ApplicationLibProvasProvaBundle::class => ['all' => true],
     App\Application\LibProvas\ProfessorBundle\ApplicationLibProvasProfessorBundle::class => ['all' => true],
-    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+    App\Application\LibProvas\GradeCurricularBundle\ApplicationLibProvasGradeCurricularBundle::class => ['all' => true],
+    App\Application\LibProvas\TipoProvaBundle\ApplicationLibProvasTipoProvaBundle::class => ['all' => true],
+
 ];

@@ -1,0 +1,14 @@
+#services:
+#    disciplina.search_filter:
+#        parent: 'api_platform.doctrine.orm.search_filter'
+#        arguments: [ { id: 'exact', gradeCurricular: 'exact' } ]
+#        tags: ['api_platform.filter']
+#        autowire: false
+#        autoconfigure: false
+#        public: false
+
+    # exact       = where {campo} = "consulta"            -- igual ao argumento passado
+    # start       = where {campo} like "%consulta"        -- inicio igual ao argumento passado
+    # end         = where {campo} like "consulta%"        -- final igual ao argumento passado
+    # partial     = where {campo} like "%consulta%"       -- inicio e final igual ao argumento passado
+    # world_start                                         -- primeira palavra que bater com argumento passado

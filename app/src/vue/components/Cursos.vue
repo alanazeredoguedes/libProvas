@@ -8,27 +8,21 @@
 
       <div class="section-content">
 
-        <div class="white-space-50"></div>
+<!--        <div class="white-space-50"></div>-->
 
 
-        <div class="row">
+<!--        <div class="row">
           <div class="col-xs-12 col-sm-12">
 
             <div class="block-title">
               <h3>Todos <span>Cursos</span></h3>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <div class="row">
 
-          <ItemCurso/>
-          <ItemCurso/>
-          <ItemCurso/>
-          <ItemCurso/>
-          <ItemCurso/>
-          <ItemCurso/>
-
+          <ItemCurso v-for="curso in $root.cursos.cursos" :curso="curso" />
 
 
         </div>

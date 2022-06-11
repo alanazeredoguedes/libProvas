@@ -36,3 +36,12 @@ libprovas.professor.professor:
     resource: '@ApplicationLibProvasProfessorBundle/Resources/config/routes/routes.yaml'
     prefix: /
 
+libprovas.gradecurricular.gradecurricular:
+    resource: '@ApplicationLibProvasGradeCurricularBundle/Resources/config/routes/routes.yaml'
+    prefix: /
+
+libprovas.tipoprova.tipoprova:
+    resource: '@ApplicationLibProvasTipoProvaBundle/Resources/config/routes/routes.yaml'
+    prefix: /
+
+

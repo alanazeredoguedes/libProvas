@@ -2,6 +2,8 @@
 namespace App\Application\LibProvas\DisciplinaBundle\Admin;
 
 
+use App\Application\LibProvas\CursoBundle\Entity\Curso;
+use App\Application\LibProvas\GradeCurricularBundle\Entity\GradeCurricular;
 use App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
@@ -66,7 +68,7 @@ class DisciplinaAdmin extends AbstractAdmin
 
     public function getExportFields()
     {
-        return array('Id' => 'id', 'Periodo' => 'periodo', 'Codigo' => 'codigo', 'Nome' => 'nome', 'Ativo' => 'ativo', 'Grade' => 'grade', );
+        return array('Id' => 'id', 'Codigo' => 'codigo', 'Periodo' => 'periodo', 'Nome' => 'nome', 'Ativo' => 'ativo', 'GradeCurricular' => 'gradeCurricular.grade', );
     }
     
     protected function configureRoutes(RouteCollection $collection)
@@ -79,20 +81,34 @@ class DisciplinaAdmin extends AbstractAdmin
         $datagridMapper
             ->add('id')
             
+            ->add('codigo', null, [
+                'label' => 'Codigo',
+            ])
             ->add('periodo', null, [
                 'label' => 'Periodo',
             ])
-            ->add('codigo', null, [
-                'label' => 'Codigo Da Disciplina',
-            ])
             ->add('nome', null, [
-                'label' => 'Nome da Disciplina',
+                'label' => 'Nome',
             ])
             ->add('ativo', null, [
                 'label' => 'Ativo',
             ])
-            ->add('grade', null, [
-                'label' => 'Grade',
+            ->add('gradeCurricular', null, [], EntityType::class,[
+                'class' => GradeCurricular::class,
+                'label' => 'Grade Curricular',
+                'multiple' => true,
+                'choice_label' => function ($gradeCurricular) {
+                    return $gradeCurricular->getGradeCurso();
+                },
+            ])
+            ->add('gradeCurricular.curso', null, [
+                'label' => 'Curso'
+            ], EntityType::class,[
+                'class' => Curso::class,
+                'multiple' => true,
+                'choice_label' => function ($curso) {
+                    return $curso->getNome();
+                },
             ])
         ;
     }
@@ -104,18 +120,18 @@ class DisciplinaAdmin extends AbstractAdmin
         $listMapper
             //->addIdentifier('id')
             
+            ->addIdentifier('codigo', null, [
+                'label' => 'Codigo',
+                
+                
+            ])
             ->addIdentifier('periodo', null, [
                 'label' => 'Periodo',
                 
                 
             ])
-            ->addIdentifier('codigo', null, [
-                'label' => 'Codigo Da Disciplina',
-                
-                
-            ])
             ->addIdentifier('nome', null, [
-                'label' => 'Nome da Disciplina',
+                'label' => 'Nome',
                 
                 
             ])
@@ -126,11 +142,14 @@ class DisciplinaAdmin extends AbstractAdmin
                 'editable' => true,
                 'inverse'  => false,
             ])
-            ->addIdentifier('grade', null, [
-                'label' => 'Grade',
-                
-                
-            ])          
+            ->add('gradeCurricular', null, [
+                'label' => 'Grade Curricular',
+                'associated_property' => 'grade',
+            ])
+            ->add('gradeCurricular.curso', null, [
+                'label' => 'Curso',
+                'associated_property' => 'nome',
+            ])
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -144,19 +163,8 @@ class DisciplinaAdmin extends AbstractAdmin
     {
         $formMapper
             
-            ->add('periodo', IntegerType::class, [
-                'label' => 'Periodo:',
-                'required' => false,
-                
-                'constraints' => [ 
-                    new Length([
-                        'min' => 1,
-                        'max' => 2,
-                    ]), ],
-                'help' => '',
-            ])
             ->add('codigo', TextType::class, [
-                'label' => 'Codigo Da Disciplina:',
+                'label' => 'Codigo:',
                 'required' => true,
                 
                 'constraints' => [ 
@@ -164,8 +172,20 @@ class DisciplinaAdmin extends AbstractAdmin
              ],
                 'help' => '',
             ])
+            ->add('periodo', IntegerType::class, [
+                'label' => 'Periodo:',
+                'required' => true,
+                'constraints' => [ 
+                    new NotNull(),
+            
+                    new Length([
+                        'min' => 1,
+                        'max' => 2,
+                    ]), ],
+                'help' => '',
+            ])
             ->add('nome', TextType::class, [
-                'label' => 'Nome da Disciplina:',
+                'label' => 'Nome:',
                 'required' => true,
                 
                 'constraints' => [ 
@@ -180,13 +200,13 @@ class DisciplinaAdmin extends AbstractAdmin
                 'constraints' => [  ],
                 'help' => '',
             ])
-            ->add('grade', TextType::class, [
-                'label' => 'Grade:',
-                'required' => true,
-                
-                'constraints' => [ 
-                    new NotNull(),
-             ],
+            ->add('gradeCurricular', ModelType::class,[
+                'class' => GradeCurricular::class,
+                'property' => 'gradeCurso',
+                'label' => 'GradeCurricular:',
+                'required' => false,
+                'expanded' => false,
+                'btn_add' => false,
                 'help' => '',
             ])
         ;
@@ -199,25 +219,24 @@ class DisciplinaAdmin extends AbstractAdmin
                 'label' => 'Id:',
             ])
             
+            ->add('codigo', null, [
+                'label' => 'Codigo:',
+                
+            ])
             ->add('periodo', null, [
                 'label' => 'Periodo:',
                 
             ])
-            ->add('codigo', null, [
-                'label' => 'Codigo Da Disciplina:',
-                
-            ])
             ->add('nome', null, [
-                'label' => 'Nome da Disciplina:',
+                'label' => 'Nome:',
                 
             ])
             ->add('ativo', null, [
                 'label' => 'Ativo:',
                 
             ])
-            ->add('grade', null, [
-                'label' => 'Grade:',
-                
+            ->add('gradeCurricular.grade', null, [
+                'label' => 'GradeCurricular:',
             ])
         ;
     }

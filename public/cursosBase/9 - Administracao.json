@@ -1,0 +1,253 @@
+{
+    "codigo": "9",
+    "nome": "Administração",
+    "habilitacao": "Bacharel(a) em Administração",
+    "matrizCurricular": "Grade 1A de Administração",
+    "disciplinas": [
+        {
+            "periodo": "1",
+            "codigo": "CGE01009",
+            "nome": "Contabilidade Geral"
+        },
+        {
+            "periodo": "1",
+            "codigo": "IAD01009",
+            "nome": "Introdução à Administração"
+        },
+        {
+            "periodo": "1",
+            "codigo": "IEC01009",
+            "nome": "Introdução à Economia"
+        },
+        {
+            "periodo": "1",
+            "codigo": "IFI01009",
+            "nome": "Introdução à Filosofia"
+        },
+        {
+            "periodo": "1",
+            "codigo": "ITI01009",
+            "nome": "Introdução às Tecnologias da Informação I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "MAT01009",
+            "nome": "Matemática I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "SAP01009",
+            "nome": "Sociologia Aplicada"
+        },
+        {
+            "periodo": "2",
+            "codigo": "CGC01009",
+            "nome": "Contabilidade Gerencial e de Custos"
+        },
+        {
+            "periodo": "2",
+            "codigo": "ITI02009",
+            "nome": "Introdução às Tecnologias da Informação II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "MAT02009",
+            "nome": "Matemática II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "PAA01009",
+            "nome": "Psicologia Aplicada à Administração"
+        },
+        {
+            "periodo": "2",
+            "codigo": "SHR01009",
+            "nome": "O Ser Humano e o Fenômeno Religioso"
+        },
+        {
+            "periodo": "2",
+            "codigo": "TAD01009",
+            "nome": "Teoria Geral da Administração"
+        },
+        {
+            "periodo": "2",
+            "codigo": "TEC01009",
+            "nome": "Teoria Econômica"
+        },
+        {
+            "periodo": "3",
+            "codigo": "ABA01009",
+            "nome": "Análise de Balanços"
+        },
+        {
+            "periodo": "3",
+            "codigo": "ARH01009",
+            "nome": "Administração de Recursos Humanos I"
+        },
+        {
+            "periodo": "3",
+            "codigo": "EST01009",
+            "nome": "Estatística I"
+        },
+        {
+            "periodo": "3",
+            "codigo": "HPA01009",
+            "nome": "História do Pensamento Administrativo"
+        },
+        {
+            "periodo": "3",
+            "codigo": "HRE01009",
+            "nome": "História das Religiões e sua Presença no Brasil"
+        },
+        {
+            "periodo": "3",
+            "codigo": "IDI01009",
+            "nome": "Instituições do Direito"
+        },
+        {
+            "periodo": "3",
+            "codigo": "OSM01009",
+            "nome": "Organização, Sistemas e Métodos I"
+        },
+        {
+            "periodo": "4",
+            "codigo": "ARH02009",
+            "nome": "Administração de Recursos Humanos II"
+        },
+        {
+            "periodo": "4",
+            "codigo": "ASI010009",
+            "nome": "Administração de Sistemas de Informação"
+        },
+        {
+            "periodo": "4",
+            "codigo": "EST02009",
+            "nome": "Estatística II"
+        },
+        {
+            "periodo": "4",
+            "codigo": "LSO01009",
+            "nome": "Legislação Social"
+        },
+        {
+            "periodo": "4",
+            "codigo": "MFI01009",
+            "nome": "Matemática Financeira"
+        },
+        {
+            "periodo": "4",
+            "codigo": "MPE01009",
+            "nome": "Metodologia da Pesquisa"
+        },
+        {
+            "periodo": "4",
+            "codigo": "OSM02009",
+            "nome": "Organização, Sistemas e Métodos II"
+        },
+        {
+            "periodo": "5",
+            "codigo": "AFO01009",
+            "nome": "Administração Financeira e Orçamentaria"
+        },
+        {
+            "periodo": "5",
+            "codigo": "APR01009",
+            "nome": "Administração de Produção I"
+        },
+        {
+            "periodo": "5",
+            "codigo": "LPT01009",
+            "nome": "Leitura e Produção de Textos I"
+        },
+        {
+            "periodo": "5",
+            "codigo": "LTR010009",
+            "nome": "Legislação Tributária"
+        },
+        {
+            "periodo": "5",
+            "codigo": "MKT01009",
+            "nome": "Marketing I"
+        },
+        {
+            "periodo": "5",
+            "codigo": "PDE01009",
+            "nome": "Processo Decisório"
+        },
+        {
+            "periodo": "6",
+            "codigo": "AIF01009",
+            "nome": "Administração de Instituições Finan. e Mercado de Capitais"
+        },
+        {
+            "periodo": "6",
+            "codigo": "APR02009",
+            "nome": "Administração de Produção II"
+        },
+        {
+            "periodo": "6",
+            "codigo": "EBR01009",
+            "nome": "Economia Brasileira"
+        },
+        {
+            "periodo": "6",
+            "codigo": "LPT02009",
+            "nome": "Leitura e Produção de Textos II"
+        },
+        {
+            "periodo": "6",
+            "codigo": "MKT02009",
+            "nome": "Marketing II"
+        },
+        {
+            "periodo": "6",
+            "codigo": "PLO01009",
+            "nome": "Planejamento Organizacional"
+        },
+        {
+            "periodo": "7",
+            "codigo": "ACC01009",
+            "nome": "Antropologia e Cultura Contemporânea"
+        },
+        {
+            "periodo": "7",
+            "codigo": "ARM01009",
+            "nome": "Administração de Recursos Materiais e Logísticos"
+        },
+        {
+            "periodo": "7",
+            "codigo": "CEC01009",
+            "nome": "Cristianismo, Ética Cristã e Pedagogia Lassalista"
+        },
+        {
+            "periodo": "7",
+            "codigo": "ESU01009",
+            "nome": "Estágio Supervisionado I"
+        },
+        {
+            "periodo": "7",
+            "codigo": "TAM01009",
+            "nome": "Tópicos Avançados em Marketing"
+        },
+        {
+            "periodo": "8",
+            "codigo": "CHO01009/1",
+            "nome": "Comportamento Humano nas Organizações"
+        },
+        {
+            "periodo": "8",
+            "codigo": "CPA01009",
+            "nome": "Ciência Política e Administração"
+        },
+        {
+            "periodo": "8",
+            "codigo": "EPC01009",
+            "nome": "Ética Profissional e Cidadania"
+        },
+        {
+            "periodo": "8",
+            "codigo": "ESU02009/1",
+            "nome": "Estágio Supervisionado II"
+        }
+    ]
+}

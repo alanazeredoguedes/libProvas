@@ -6,17 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Application\Sonata\MediaBundle\Entity\Gallery;
 use App\Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
-use ApiPlatform\Core\Annotation\ApiResource;
-
+//use ApiPlatform\Core\Annotation\ApiResource;
 
 
 /**
  * Prova
- * @ApiResource()
  * @ORM\Table(name="prova")
  * @ORM\Entity(repositoryClass="App\Application\LibProvas\ProvaBundle\Repository\ProvaRepository")
-
  */
+/*@ApiResource()*/
 
 class Prova
 {
@@ -27,6 +25,13 @@ class Prova
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * Many Prova has One TipoProva (TipoProva).
+     * @ORM\ManyToOne(targetEntity="App\Application\LibProvas\TipoProvaBundle\Entity\TipoProva")
+     * @ORM\JoinColumn(name="tipo_prova_id", referencedColumnName="id")
+     */
+    private $tipoProva;
 
     /**
      * Many Prova has One Disciplina (Disciplina).
@@ -43,23 +48,23 @@ class Prova
     private $professor;
 
     /**
-     *
-     * @ORM\Column(name="data", type="date")
-     */
-    private $data;
-
-    /**
-     *
-     * @ORM\Column(name="ativo", type="boolean", nullable=true)
-     */
-    private $ativo;
-
-    /**
      * @var Gallery
      *
      * @ORM\ManyToOne (targetEntity="App\Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"})
      */
     private $arquivos;
+
+    /**
+     *
+     * @ORM\Column(name="data", type="date", nullable=true)
+     */
+    private $data;
+
+    /**
+     *
+     * @ORM\Column(name="ativa", type="boolean", nullable=true)
+     */
+    private $ativa;
     
     public function __construct() {
         
@@ -76,6 +81,23 @@ class Prova
     public function getStringId(): ?String
     {
         return (String) $this->id;
+    }
+    
+   
+   /**
+    * @return mixed
+    */
+    public function getTipoProva()
+    {
+        return $this->tipoProva;
+    }
+    
+    /**
+     * @param mixed $tipoProva
+     */
+    public function setTipoProva($tipoProva): void
+    {
+        $this->tipoProva = $tipoProva;
     }
     
    
@@ -112,28 +134,6 @@ class Prova
         $this->professor = $professor;
     }
     
-   
-    public function getData()
-    {
-        return $this->data;
-    }
-    
-    public function setData($data): void
-    {
-        $this->data = $data;
-    }
-    
-   
-    public function getAtivo()
-    {
-        return $this->ativo;
-    }
-    
-    public function setAtivo($ativo): void
-    {
-        $this->ativo = $ativo;
-    }
-    
     /**
      * @return null|Gallery
      */
@@ -149,4 +149,26 @@ class Prova
     {
         $this->arquivos = $arquivos;
     }
-}
+
+   
+    public function getData()
+    {
+        return $this->data;
+    }
+    
+    public function setData($data): void
+    {
+        $this->data = $data;
+    }
+    
+   
+    public function getAtiva()
+    {
+        return $this->ativa;
+    }
+    
+    public function setAtiva($ativa): void
+    {
+        $this->ativa = $ativa;
+    }
+    }

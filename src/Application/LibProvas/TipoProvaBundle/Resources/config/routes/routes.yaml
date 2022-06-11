@@ -1,0 +1,3 @@
+libprovas_tipoprova:
+    resource: "@ApplicationLibProvasTipoProvaBundle/Controller/"
+    type:     annotation

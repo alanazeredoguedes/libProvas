@@ -22,7 +22,8 @@
 
         <div class="row">
 
-          <ItemDisciplina :titulo="'Disciplina1'" :descricao="'Descrição ....'"/>
+
+          <ItemDisciplina  :titulo="'Disciplina1'" :descricao="'Descrição ....'"/>
           <ItemDisciplina/>
           <ItemDisciplina/>
           <ItemDisciplina/>

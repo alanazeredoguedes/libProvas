@@ -66,7 +66,7 @@ class CursoAdmin extends AbstractAdmin
 
     public function getExportFields()
     {
-        return array('Id' => 'id', 'Nome' => 'nome', 'Ativo' => 'ativo', );
+        return array('Id' => 'id', 'Codigo' => 'codigo', 'Nome' => 'nome', 'Descricao' => 'descricao', 'Ativo' => 'ativo', );
     }
     
     protected function configureRoutes(RouteCollection $collection)
@@ -79,8 +79,14 @@ class CursoAdmin extends AbstractAdmin
         $datagridMapper
             ->add('id')
             
+            ->add('codigo', null, [
+                'label' => 'Codigo',
+            ])
             ->add('nome', null, [
                 'label' => 'Nome',
+            ])
+            ->add('descricao', null, [
+                'label' => 'Descricao',
             ])
             ->add('ativo', null, [
                 'label' => 'Ativo',
@@ -95,8 +101,18 @@ class CursoAdmin extends AbstractAdmin
         $listMapper
             //->addIdentifier('id')
             
+            ->addIdentifier('codigo', null, [
+                'label' => 'Codigo',
+                
+                
+            ])
             ->addIdentifier('nome', null, [
                 'label' => 'Nome',
+                
+                
+            ])
+            ->addIdentifier('descricao', null, [
+                'label' => 'Descricao',
                 
                 
             ])
@@ -120,6 +136,15 @@ class CursoAdmin extends AbstractAdmin
     {
         $formMapper
             
+            ->add('codigo', TextType::class, [
+                'label' => 'Codigo:',
+                'required' => true,
+                
+                'constraints' => [ 
+                    new NotNull(),
+             ],
+                'help' => '',
+            ])
             ->add('nome', TextType::class, [
                 'label' => 'Nome:',
                 'required' => true,
@@ -127,6 +152,13 @@ class CursoAdmin extends AbstractAdmin
                 'constraints' => [ 
                     new NotNull(),
              ],
+                'help' => '',
+            ])
+            ->add('descricao', TextType::class, [
+                'label' => 'Descricao:',
+                'required' => false,
+                
+                'constraints' => [  ],
                 'help' => '',
             ])
             ->add('ativo', CheckboxType::class, [
@@ -146,8 +178,16 @@ class CursoAdmin extends AbstractAdmin
                 'label' => 'Id:',
             ])
             
+            ->add('codigo', null, [
+                'label' => 'Codigo:',
+                
+            ])
             ->add('nome', null, [
                 'label' => 'Nome:',
+                
+            ])
+            ->add('descricao', null, [
+                'label' => 'Descricao:',
                 
             ])
             ->add('ativo', null, [

@@ -59,22 +59,37 @@ services:
       class:  App\Application\LibProvas\CursoBundle\Admin\CursoAdmin
       arguments:  [ ~ , App\Application\LibProvas\CursoBundle\Entity\Curso, App\Application\LibProvas\CursoBundle\Controller\CursoAdminController ]
       tags:
-          - {name: sonata.admin, manager_type: orm, group: "Cursos", label: Cursos, on_top: true }
+        - {name: sonata.admin, manager_type: orm, group: "Cursos", label: Cursos, on_top: true }
+
+    libprovas.gradecurricular.gradecurricular:
+      class:  App\Application\LibProvas\GradeCurricularBundle\Admin\GradeCurricularAdmin
+      arguments:  [ ~ , App\Application\LibProvas\GradeCurricularBundle\Entity\GradeCurricular, App\Application\LibProvas\GradeCurricularBundle\Controller\GradeCurricularAdminController ]
+      tags:
+        - {name: sonata.admin, manager_type: orm, group: "Grade Curricular", label: Grade Curricular, on_top: true }
 
     libprovas.disciplina.disciplina:
       class:  App\Application\LibProvas\DisciplinaBundle\Admin\DisciplinaAdmin
       arguments:  [ ~ , App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina, App\Application\LibProvas\DisciplinaBundle\Controller\DisciplinaAdminController ]
       tags:
-          - {name: sonata.admin, manager_type: orm, group: "Disciplinas", label: Disciplinas, on_top: true }
+        - {name: sonata.admin, manager_type: orm, group: "Disciplinas", label: Disciplinas, on_top: true }
+
+    libprovas.tipoprova.tipoprova:
+      class:  App\Application\LibProvas\TipoProvaBundle\Admin\TipoProvaAdmin
+      arguments:  [ ~ , App\Application\LibProvas\TipoProvaBundle\Entity\TipoProva, App\Application\LibProvas\TipoProvaBundle\Controller\TipoProvaAdminController ]
+      tags:
+        - {name: sonata.admin, manager_type: orm, group: "Tipo de Prova", label: Tipo de Prova, on_top: true }
+
 
     libprovas.prova.prova:
       class:  App\Application\LibProvas\ProvaBundle\Admin\ProvaAdmin
       arguments:  [ ~ , App\Application\LibProvas\ProvaBundle\Entity\Prova, App\Application\LibProvas\ProvaBundle\Controller\ProvaAdminController ]
       tags:
-          - {name: sonata.admin, manager_type: orm, group: "Provas", label: Provas, on_top: true }
+        - {name: sonata.admin, manager_type: orm, group: "Provas", label: Provas, on_top: true }
 
     libprovas.professor.professor:
       class:  App\Application\LibProvas\ProfessorBundle\Admin\ProfessorAdmin
       arguments:  [ ~ , App\Application\LibProvas\ProfessorBundle\Entity\Professor, App\Application\LibProvas\ProfessorBundle\Controller\ProfessorAdminController ]
       tags:
-          - {name: sonata.admin, manager_type: orm, group: "Professores", label: Professores, on_top: true }
+        - {name: sonata.admin, manager_type: orm, group: "Professores", label: Professores, on_top: true }
+
+

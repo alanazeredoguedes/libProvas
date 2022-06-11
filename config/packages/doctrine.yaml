@@ -45,7 +45,9 @@ doctrine:
             # /////////////////////////////// #
 
             
-            ApplicationLibProvasCursoBundle: ~            
-            ApplicationLibProvasDisciplinaBundle: ~            
-            ApplicationLibProvasProvaBundle: ~            
+            ApplicationLibProvasCursoBundle: ~
+            ApplicationLibProvasDisciplinaBundle: ~
+            ApplicationLibProvasProvaBundle: ~
             ApplicationLibProvasProfessorBundle: ~
+            ApplicationLibProvasGradeCurricularBundle: ~
+            ApplicationLibProvasTipoProvaBundle: ~

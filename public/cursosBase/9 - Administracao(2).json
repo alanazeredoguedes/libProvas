@@ -1,0 +1,218 @@
+{
+    "codigo": "9",
+    "nome": "Administração",
+    "habilitacao": "Bacharel(a) em Administração",
+    "matrizCurricular": "Grade 5A de Administração",
+    "disciplinas": [
+        {
+            "periodo": "1",
+            "codigo": "602ADM",
+            "nome": "Administração"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602COL",
+            "nome": "Comunicação e Linguagem"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602FUC",
+            "nome": "Fundamentos de Contabilidade"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602MAN",
+            "nome": "Matemática para Negócios"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602PRI1",
+            "nome": "Projeto Integrador I"
+        },
+        {
+            "periodo": "1",
+            "codigo": "602PRO",
+            "nome": "Processos Organizacionais"
+        },
+        {
+            "periodo": "2",
+            "codigo": "601DIE",
+            "nome": "Direito Empresarial"
+        },
+        {
+            "periodo": "2",
+            "codigo": "602MCF",
+            "nome": "Matemática Comercial e Financeira"
+        },
+        {
+            "periodo": "2",
+            "codigo": "602PRI2",
+            "nome": "Projeto Integrador II"
+        },
+        {
+            "periodo": "2",
+            "codigo": "605ECO",
+            "nome": "Economia"
+        },
+        {
+            "periodo": "2",
+            "codigo": "708PCC",
+            "nome": "Psicologia, Clima e Cultura Organização"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602ESP",
+            "nome": "Estatística e Probabilidade"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602GEP",
+            "nome": "Gestão de Pessoas"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602PRI3",
+            "nome": "Projeto Integrador III"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602TGC",
+            "nome": "Temas Globais Contemporâneos"
+        },
+        {
+            "periodo": "3",
+            "codigo": "603ACF",
+            "nome": "Análise Contábil e Financeira"
+        },
+        {
+            "periodo": "4",
+            "codigo": "602ADF",
+            "nome": "Administração Financeira"
+        },
+        {
+            "periodo": "4",
+            "codigo": "602CEM",
+            "nome": "Comunicação Empresarial"
+        },
+        {
+            "periodo": "4",
+            "codigo": "602GEP1",
+            "nome": "Gestão de Projetos"
+        },
+        {
+            "periodo": "4",
+            "codigo": "602PRI4",
+            "nome": "Projeto Integrador IV"
+        },
+        {
+            "periodo": "4",
+            "codigo": "603GCFP",
+            "nome": "Gestão de Custos e Formação de Preços"
+        },
+        {
+            "periodo": "5",
+            "codigo": "602CAS",
+            "nome": "Cadeia de Suprimentos"
+        },
+        {
+            "periodo": "5",
+            "codigo": "602GEM",
+            "nome": "Gestão de Marketing"
+        },
+        {
+            "periodo": "5",
+            "codigo": "602MFC",
+            "nome": "Mercado Financeiro e de Capitais"
+        },
+        {
+            "periodo": "5",
+            "codigo": "602PRI5",
+            "nome": "Projeto Integrador V"
+        },
+        {
+            "periodo": "5",
+            "codigo": "602TSI",
+            "nome": "Tecnologias e Sistemas da Informação"
+        },
+        {
+            "periodo": "6",
+            "codigo": "204GAS180",
+            "nome": "Gestão Ambiental e Sustentabilidade"
+        },
+        {
+            "periodo": "6",
+            "codigo": "602GEE",
+            "nome": "Gestão Estratégica"
+        },
+        {
+            "periodo": "6",
+            "codigo": "602POPD",
+            "nome": "Pesquisa Operacional e o Processo Decisório"
+        },
+        {
+            "periodo": "6",
+            "codigo": "602PRI6",
+            "nome": "Projeto Integrador VI"
+        },
+        {
+            "periodo": "6",
+            "codigo": "708GCH180",
+            "nome": "Gestão do Conhecimento"
+        },
+        {
+            "periodo": "7",
+            "codigo": "309GT",
+            "nome": "Gestão de Tributos"
+        },
+        {
+            "periodo": "7",
+            "codigo": "602NI",
+            "nome": "Negócios Internacionais"
+        },
+        {
+            "periodo": "7",
+            "codigo": "602PIM",
+            "nome": "Pesquisa e Inteligência de Mercado"
+        },
+        {
+            "periodo": "7",
+            "codigo": "602PRI7",
+            "nome": "Projeto Integrador VII"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602ATV",
+            "nome": "Atividades Complementares"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602ECOB",
+            "nome": "Estágio Curricular Obrigatório"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602ESC",
+            "nome": "Estratégias de Consultoria"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602EXE",
+            "nome": "Experiência Empreendedora"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602JOE",
+            "nome": "Jogos de Empresas"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602PRI8",
+            "nome": "Projeto Integrador VIII"
+        },
+        {
+            "periodo": "8",
+            "codigo": "602TAN",
+            "nome": "Tendências em Administração e Negócios"
+        }
+    ]
+}

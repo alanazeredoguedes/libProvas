@@ -1,0 +1,238 @@
+{
+    "codigo": "109",
+    "nome": "Publicidade e Propaganda",
+    "habilitacao": "Publicidade e Propaganda",
+    "matrizCurricular": "Publicidade e Propaganda",
+    "disciplinas": [
+        {
+            "periodo": "1",
+            "codigo": "602COL",
+            "nome": "Comunicação e Linguagem"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612ADHD",
+            "nome": "Arte e Design: Histórias e Diálogos"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612ATITDE",
+            "nome": "Atividade Integradora I (TDE)"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612CPC",
+            "nome": "Comunicação, Política e Consumo"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612CPCC",
+            "nome": "Comunicação, Psicologia, Cognição e Consumo"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612HC",
+            "nome": "História da Comunicação"
+        },
+        {
+            "periodo": "1",
+            "codigo": "612LPCAC",
+            "nome": "Laboratório de Padrões de Consumo (Atividades Complementares)"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612CDI",
+            "nome": "Cultura Digital (Imagem, linguagem e mídia)"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612ERS",
+            "nome": "Ética e Responsabilidade Social"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612IMB",
+            "nome": "Introdução ao Marketing e Branding"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612INT2",
+            "nome": "Atividade Integradora II (TDE)"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612IPP",
+            "nome": "Introdução à Publicidade e Propaganda"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612LLD",
+            "nome": "Laboratório de Literacia Digital (Atividades Complementares)"
+        },
+        {
+            "periodo": "2",
+            "codigo": "612TEC",
+            "nome": "Teoria da Comunicação"
+        },
+        {
+            "periodo": "3",
+            "codigo": "602TGC",
+            "nome": "Temas Globais Contemporâneos"
+        },
+        {
+            "periodo": "3",
+            "codigo": "612DADG",
+            "nome": "Direção de Arte e Design Gráfico"
+        },
+        {
+            "periodo": "3",
+            "codigo": "612FP",
+            "nome": "Fotografia Publicitária"
+        },
+        {
+            "periodo": "3",
+            "codigo": "612INT3",
+            "nome": "Atividade Integradora III (TDE)"
+        },
+        {
+            "periodo": "3",
+            "codigo": "612LEC",
+            "nome": "Laboratório de Estratégia de Conteúdo (Atividades Complementares)"
+        },
+        {
+            "periodo": "3",
+            "codigo": "612RPPC",
+            "nome": "Redação Publicitária e Processos Criativos"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612ACAD",
+            "nome": "Algorítimos e a Comunicação em Ambientes Digitais"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612BCS",
+            "nome": "Branded Content e Storytelling Multimeios"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612DID",
+            "nome": "Design de Interfaces digitais: UX e UI"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612GID",
+            "nome": "Gestão e informação de dados aplicados à comunicação"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612GMN",
+            "nome": "Gestão de Marcas e Negócios"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612INT4",
+            "nome": "Atividade Integradora IV (TDE)"
+        },
+        {
+            "periodo": "4",
+            "codigo": "612LSNM",
+            "nome": "Laboratório de Segmentação e Nichos de mercado (Atividades Complementares )"
+        },
+        {
+            "periodo": "5",
+            "codigo": "612CC",
+            "nome": "Comportamento do Consumidor"
+        },
+        {
+            "periodo": "5",
+            "codigo": "612EMTC",
+            "nome": "Estudo das mídias: transmídia e crossmídia"
+        },
+        {
+            "periodo": "5",
+            "codigo": "612INT5",
+            "nome": "Atividade Integradora V"
+        },
+        {
+            "periodo": "5",
+            "codigo": "612LMDP",
+            "nome": "Laboratório de Marketing Digital e Plataformas Midiáticas (Atividade Complementar)"
+        },
+        {
+            "periodo": "5",
+            "codigo": "612MDPM",
+            "nome": "Marketing Digital e Plataformas Midiáticas - Planejamento de Ações Digitais"
+        },
+        {
+            "periodo": "6",
+            "codigo": "602EXE",
+            "nome": "Experiência Empreendedora"
+        },
+        {
+            "periodo": "6",
+            "codigo": "612AB",
+            "nome": "Atendimento e Briefing"
+        },
+        {
+            "periodo": "6",
+            "codigo": "612INT6",
+            "nome": "Atividade Integradora VI"
+        },
+        {
+            "periodo": "6",
+            "codigo": "612LA",
+            "nome": " Laboratório de Atendimento (Atividades Complementares)"
+        },
+        {
+            "periodo": "6",
+            "codigo": "612MNP",
+            "nome": "Modelos de Negócios em Publicidade e Legislação Publicitária"
+        },
+        {
+            "periodo": "6",
+            "codigo": "612PCP",
+            "nome": "Planejamento de Campanhas, Pesquisa de Mercado e de Opinião"
+        },
+        {
+            "periodo": "7",
+            "codigo": "612INT7",
+            "nome": "Atividade Integradora VII"
+        },
+        {
+            "periodo": "7",
+            "codigo": "612LPA",
+            "nome": "Atividades Complementares - Laboratório de Produção Audiovisual"
+        },
+        {
+            "periodo": "7",
+            "codigo": "612PAM",
+            "nome": "Produção Audiovisual e Multimídia"
+        },
+        {
+            "periodo": "7",
+            "codigo": "612PE1",
+            "nome": "Projeto Experimental I"
+        },
+        {
+            "periodo": "8",
+            "codigo": "612INT8",
+            "nome": "Atividade Integradora VIII"
+        },
+        {
+            "periodo": "8",
+            "codigo": "612LPO",
+            "nome": "Laboratório de Pesquisa e Opinião Pública (Atividade Complementar)"
+        },
+        {
+            "periodo": "8",
+            "codigo": "612PE2",
+            "nome": "Projeto Experimental II"
+        },
+        {
+            "periodo": "8",
+            "codigo": "612PM",
+            "nome": "Planejamento de Mídia"
+        }
+    ]
+}
