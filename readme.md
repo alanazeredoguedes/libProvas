@@ -17,6 +17,8 @@
 2 - bin/console zeus:project:install para instalar o projeto 
 
 
+yarn encore dev --watch
+
 ## Comandos Auxiliares ## 
 
 - bin/console server:start 127.0.0.1:9000

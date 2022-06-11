@@ -38,5 +38,5 @@ return [
     App\Application\LibProvas\DisciplinaBundle\ApplicationLibProvasDisciplinaBundle::class => ['all' => true],
     App\Application\LibProvas\ProvaBundle\ApplicationLibProvasProvaBundle::class => ['all' => true],
     App\Application\LibProvas\ProfessorBundle\ApplicationLibProvasProfessorBundle::class => ['all' => true],
-
-    ];
+    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+];
