@@ -8,14 +8,14 @@ use App\Application\Sonata\MediaBundle\Entity\Gallery;
 use App\Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Core\Annotation\ApiResource;
-
+use App\Application\LibProvas\DisciplinaBundle\Repository\DisciplinaRepository;
 
 
 /**
  * Disciplina
  * @ApiResource()
  * @ORM\Table(name="disciplina")
- * @ORM\Entity(repositoryClass="App\Application\LibProvas\DisciplinaBundle\Repository\DisciplinaRepository")
+ * @ORM\Entity(repositoryClass=DisciplinaRepository::class)
  */
 class Disciplina
 {

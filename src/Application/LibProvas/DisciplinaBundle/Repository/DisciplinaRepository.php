@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<Disciplina>
+ *
  * @method Disciplina|null find($id, $lockMode = null, $lockVersion = null)
  * @method Disciplina|null findOneBy(array $criteria, array $orderBy = null)
  * @method Disciplina[]    findAll()

@@ -1,18 +1,90 @@
 <template>
   <div class="ProvasComponent" >
-
-    <!-- Portfolio Subpage -->
     <section data-id="provas" class="provas animated-section">
       <div class="page-title">
-        <h2>Provas</h2>
+        <h2>Prov<span>as</span></h2>
       </div>
 
-      <div class="section-content">
+      <div class="white-space-50" v-if="!$root.cursoSelect || !$root.disciplinaSelect"></div>
 
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-10" >
+
+          <div class="block-title" v-if="$root.cursoSelect && $root.disciplinaSelect">
+            <h3>Provas de <span>{{ $root.disciplinaSelect.nome }}</span></h3>
+          </div>
+
+          <div class="block-title" v-if="!$root.cursoSelect">
+            <h3>Sem Curso Selecionado</h3>
+          </div>
+
+          <div class="block-title" v-if="$root.cursoSelect && !$root.disciplinaSelect">
+            <h3>Sem Disciplina Selecionado</h3>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="row" v-if="!$root.cursoSelect">
+        <div class="col-xs-12 col-sm-12">
+          <div class="col-inner">
+            <div class="info-list-w-icon">
+
+              <a href="javascript:void(0)" @click="$root.changeMenu('cursos')" style="color: white;" class="certificate-item">
+                <div class="info-block-w-icon" style="margin: 18px;">
+                  <div class="ci-icon">
+                    <i class="lnr lnr-layers"></i>
+                  </div>
+                  <div class="ci-text">
+                    <h4>Selecionar Curso</h4>
+                    <p>Para continuar, selecione um curso.</p>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" v-if="$root.cursoSelect && !$root.disciplinaSelect">
+        <div class="col-xs-12 col-sm-12">
+          <div class="col-inner">
+            <div class="info-list-w-icon">
+
+              <a href="javascript:void(0)" @click="$root.changeMenu('disciplinas')" style="color: white;" class="certificate-item">
+                <div class="info-block-w-icon" style="margin: 18px;">
+                  <div class="ci-icon">
+                    <i class="lnr lnr-list"></i>
+                  </div>
+                  <div class="ci-text">
+                    <h4>Selecionar Disciplina</h4>
+                    <p>Para continuar, selecione uma disciplina.</p>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="section-content" v-if="$root.cursoSelect && $root.disciplinaSelect">
         <div class="row">
           <div class="col-xs-12 col-sm-12">
-            <!-- Portfolio Content -->
             <div class="portfolio-content">
+
+
 
               <ul class="portfolio-filters">
                 <li class="active">
@@ -33,10 +105,15 @@
                 <li>
                   <a class="filter btn btn-sm btn-link" data-group="category_youtube-videos">YouTube Videos</a>
                 </li>
+
+                <li v-for="tipo in $root.tipos">
+                  <a class="filter btn btn-sm btn-link" data-group="category_youtube-videos">{{ tipo.tipo }}</a>
+                </li>
               </ul>
 
-              <!-- Portfolio Grid -->
-              <div class="portfolio-grid three-columns">
+
+
+              <div class="portfolio-grid three-columns" >
 
                 <figure class="item lbaudio" data-groups='["category_all", "category_soundcloud"]'>
                   <div class="portfolio-item-img">
@@ -103,15 +180,19 @@
                   <h4 class="name">YouTube Video 1</h4>
                   <span class="category">YouTube Videos</span>
                 </figure>
+
               </div>
+
+
+
+
+
+
             </div>
-            <!-- End of Portfolio Content -->
           </div>
         </div>
       </div>
     </section>
-    <!-- End of Portfolio Subpage -->
-
   </div>
 </template>
 

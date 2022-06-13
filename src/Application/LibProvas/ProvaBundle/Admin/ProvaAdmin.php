@@ -2,6 +2,8 @@
 namespace App\Application\LibProvas\ProvaBundle\Admin;
 
 
+use App\Application\LibProvas\CursoBundle\Entity\Curso;
+use App\Application\LibProvas\GradeCurricularBundle\Entity\GradeCurricular;
 use App\Application\LibProvas\TipoProvaBundle\Entity\TipoProva;
 use App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina;
 use App\Application\LibProvas\ProfessorBundle\Entity\Professor;
@@ -101,7 +103,10 @@ class ProvaAdmin extends AbstractAdmin
                 'label' => 'Disciplina',
                 'multiple' => true,
                 'choice_label' => function ($disciplina) {
-                    return $disciplina->getNome();
+                    return $disciplina->getCodigo() . ' - ' .
+                            $disciplina->getNome() . ' - ' .
+                            $disciplina->getGradeCurricular()->getGrade() . ' - ' .
+                            $disciplina->getGradeCurricular()->getCurso()->getNome();
                 },
             ])
             ->add('professor', null, [], EntityType::class,[
@@ -110,6 +115,24 @@ class ProvaAdmin extends AbstractAdmin
                 'multiple' => true,
                 'choice_label' => function ($professor) {
                     return $professor->getNome();
+                },
+            ])
+            ->add('disciplina.gradeCurricular', null, [
+                'label' => 'Grade'
+            ], EntityType::class,[
+                'class' => GradeCurricular::class,
+                'multiple' => true,
+                'choice_label' => function ($grade) {
+                    return $grade->getGrade() . ' - ' . $grade->getCurso()->getNome();
+                },
+            ])
+            ->add('disciplina.gradeCurricular.curso', null, [
+                'label' => 'Curso'
+            ], EntityType::class,[
+                'class' => Curso::class,
+                'multiple' => true,
+                'choice_label' => function ($curso) {
+                    return $curso->getNome();
                 },
             ])
         ;
@@ -121,92 +144,110 @@ class ProvaAdmin extends AbstractAdmin
 
         $listMapper
             //->addIdentifier('id')
-            
-            ->addIdentifier('data', null, [
-                'label' => 'Data',
-                'format' => 'd/m/Y',
-                
-            ])
             ->add('ativa', null, [
                 'label' => 'Ativa',
-                
-                 
                 'editable' => true,
                 'inverse'  => false,
             ])
-            ->add('tipoProva', null, [
+            ->addIdentifier('tipoProva', null, [
                 'label' => 'TipoProva',
                 'associated_property' => 'tipo',
             ])
-            ->add('disciplina', null, [
+            ->addIdentifier('disciplina', null, [
                 'label' => 'Disciplina',
                 'associated_property' => 'nome',
             ])
-            ->add('professor', null, [
+            ->addIdentifier('disciplina.gradeCurricular', null, [
+                'label' => 'Grade',
+                'associated_property' => 'grade',
+            ])
+            ->addIdentifier('disciplina.gradeCurricular.curso', null, [
+                'label' => 'Curso',
+                'associated_property' => 'nome',
+            ])
+            ->addIdentifier('professor', null, [
                 'label' => 'Professor',
                 'associated_property' => 'nome',
-            ])          
+            ])
+            ->addIdentifier('data', null, [
+                'label' => 'Data',
+                'format' => 'd/m/Y',
+            ])
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
     
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            
-            ->add('arquivos', ModelListType::class,[
+            ->with('General', ['class' => 'col-md-7'])
+
+                ->add('disciplina', ModelType::class,[
+                    'class' => Disciplina::class,
+                    'property' => 'disciplinaGradeCurso',
+                    'label' => 'Disciplina:',
+                    'required' => true,
+                    'expanded' => false,
+                    'btn_add' => false,
+                    'help' => '',
+                ])
+                ->add('tipoProva', ModelType::class,[
+                    'class' => TipoProva::class,
+                    'property' => 'tipo',
+                    'label' => 'TipoProva:',
+                    'required' => true,
+                    'expanded' => false,
+                    'btn_add' => false,
+                    'help' => '',
+                ])
+                ->add('professor', ModelType::class,[
+                    'class' => Professor::class,
+                    'property' => 'nome',
+                    'label' => 'Professor:',
+                    'required' => false,
+                    'expanded' => false,
+                    'help' => '',
+                ])
+
+
+            ->end()
+
+            ->with('Arquivos', ['class' => 'col-md-5'])
+
+                ->add('arquivos', ModelListType::class,[
                     'label' => 'Arquivos: ',
+                    'btn_list' => false,
                 ],[
                     'link_parameters' => [
-                            //'context' => 'default',
-                            // 'hide_context' => true,
+                        //'context' => 'default',
+                        // 'hide_context' => true,
                     ],
-            ])
-            ->add('data', DateType::class, [
-                'label' => 'Data:',
-                'required' => false,
-                'widget' => 'single_text',
-                'constraints' => [  ],
-                'help' => '',
-            ])
-            ->add('ativa', CheckboxType::class, [
-                'label' => 'Ativa:',
-                'required' => false,
-                
-                'constraints' => [  ],
-                'help' => '',
-            ])
-            ->add('tipoProva', ModelType::class,[
-                'class' => TipoProva::class,
-                'property' => 'tipo',
-                'label' => 'TipoProva:',
-                'required' => true,
-                'expanded' => false,
-                'btn_add' => false,
-                'help' => '',
-            ])
-            ->add('disciplina', ModelType::class,[
-                'class' => Disciplina::class,
-                'property' => 'disciplinaGradeCurso',
-                'label' => 'Disciplina:',
-                'required' => true,
-                'expanded' => false,
-                'btn_add' => false,
-                'help' => '',
-            ])
-            ->add('professor', ModelType::class,[
-                'class' => Professor::class,
-                'property' => 'nome',
-                'label' => 'Professor:',
-                'required' => true,
-                'expanded' => false,
-                'help' => '',
-            ])
+                ])
+
+                ->add('data', DateType::class, [
+                    'label' => 'Data:',
+                    'required' => false,
+                    'widget' => 'single_text',
+                    'constraints' => [  ],
+                    'help' => '',
+                ])
+
+                ->add('ativa', CheckboxType::class, [
+                    'label' => 'Ativa:',
+                    'required' => false,
+
+                    'constraints' => [  ],
+                    'help' => '',
+                ])
+
+            ->end()
+
         ;
     }
     

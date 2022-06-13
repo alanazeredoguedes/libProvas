@@ -4,7 +4,7 @@
     "require": {
         "php": "^7.2.24",
         "ext-iconv": "*",
-        "api-platform/core": "^2.6",
+        "api-platform/core": "^v2.1.0",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-fixtures-bundle": "^3.4",

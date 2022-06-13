@@ -1,11 +1,12 @@
 <template>
-    <div class="ItemCursoComponent col-xs-12 col-sm-4 ">
+    <div class="ItemCursoComponent col-xs-12 col-sm-3 ">
       <a href="javascript:void(0)" @click="escolhaCurso" style="color: white;">
         <div class="fun-fact gray-default">
 <!--          <i class="lnr lnr-star"></i>-->
           <h4>{{ curso.nome }}</h4>
           <span class="fun-fact-block-value" style="">{{ curso.numeroDisciplinas }}</span>
-          <span class="fun-fact-block-text" style="">Disciplinas</span>
+          <span class="fun-fact-block-text" style="">Disciplinas cadastradas</span>
+          <span class="fun-fact-block-text" style="">em {{ curso.numeroGrades }} grades.</span>
         </div>
       </a>
     </div>
@@ -30,8 +31,9 @@ export default {
 
   methods: {
     escolhaCurso(){
-      this.$root.cursoSelecionado = this.curso;
-      this.$root.changeMenu('disciplinas')
+
+      this.$root.changeCursoSelect( this.curso ) ;
+
     }
   }
 

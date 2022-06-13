@@ -27,12 +27,12 @@
             <span class="link-text">Provas</span>
           </a>
         </li>
-<!--        <li>
-          <a href="#ver-provas" @click="changeMenu('ver-provas')" class="nav-anim">
+        <li>
+          <a href="#ver-provas" @click="changeMenu('ver-provas')" class="nav-anim btn-provas" style="display: none">
             <span class="menu-icon lnr lnr-select"></span>
             <span class="link-text">Ver Provas</span>
           </a>
-        </li>-->
+        </li>
         <li>
           <a href="#enviar-provas" @click="changeMenu('enviar-provas')" class="nav-anim btn-enviar-provas">
             <span class="menu-icon lnr lnr-upload"></span>
@@ -50,6 +50,7 @@
     </header>
 
 
+
     <!-- Mobile Navigation -->
     <div class="menu-toggle">
       <span></span>
@@ -58,21 +59,6 @@
     </div>
     <!-- End Mobile Navigation -->
 
-
-
-    <!-- Arrows Nav -->
-<!--    <div class="lmpixels-arrows-nav">
-
-      <div class="lmpixels-arrow-right">
-        <i class="lnr lnr-chevron-right"></i>
-      </div>
-
-      <div class="lmpixels-arrow-left">
-        <i class="lnr lnr-chevron-left"></i>
-      </div>
-
-    </div>-->
-    <!-- End Arrows Nav -->
 
 
   </div>
@@ -103,10 +89,7 @@ export default {
         if(itemActive !== value){
           $(`.${value}`).removeClass('section-active')
         }
-
       })
-
-
 
     }
   }

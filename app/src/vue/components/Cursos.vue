@@ -3,7 +3,7 @@
     <section data-id="cursos" class="cursos animated-section">
 
       <div class="page-title">
-        <h2>Cur<span>s</span>o<span>s</span></h2>
+        <h2>Curs<span>os</span></h2>
       </div>
 
       <div class="section-content">
@@ -22,7 +22,7 @@
 
         <div class="row">
 
-          <ItemCurso v-for="curso in $root.cursos.cursos" :curso="curso" />
+          <ItemCurso v-if="$root.cursos" v-for="(curso, index) in $root.cursos" :curso="curso" />
 
 
         </div>
