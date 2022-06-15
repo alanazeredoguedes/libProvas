@@ -1,5 +1,5 @@
 <template>
-    <div class="ItemCursoComponent col-xs-12 col-sm-3 ">
+    <div class="ItemCursoComponent col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
       <a href="javascript:void(0)" @click="escolhaCurso" style="color: white;">
         <div class="fun-fact gray-default">
 <!--          <i class="lnr lnr-star"></i>-->

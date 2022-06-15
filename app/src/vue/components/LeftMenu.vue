@@ -28,7 +28,7 @@
           </a>
         </li>
         <li>
-          <a href="#ver-provas" @click="changeMenu('ver-provas')" class="nav-anim btn-provas" style="display: none">
+          <a href="#ver-provas" @click="changeMenu('ver-provas')" class="nav-anim btn-ver-provas" style="display: none;">
             <span class="menu-icon lnr lnr-select"></span>
             <span class="link-text">Ver Provas</span>
           </a>
@@ -40,12 +40,14 @@
             <span class="link-text">Enviar Provas</span>
           </a>
         </li>
-        <li>
+
+<!--        <li>
           <a href="#contato" @click="changeMenu('contato')" class="nav-anim btn-contato">
             <span class="menu-icon lnr lnr-envelope"></span>
             <span class="link-text">Contato</span>
           </a>
-        </li>
+        </li>-->
+
       </ul>
     </header>
 

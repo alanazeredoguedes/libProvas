@@ -9,15 +9,12 @@
 
       <div class="section-content">
 
-
-        <div class="white-space-50"></div>
-
         <div class="row">
 
-          <div class="col-xs-12 col-sm-10" >
+          <div class="col-xs-12 col-sm-6" >
 
             <div class="block-title" v-if="$root.cursoSelect">
-              <h3>Disciplinas de <span>{{ $root.cursoSelect.nome }}</span></h3>
+              <h3>Disciplina de <span>{{ $root.cursoSelect.nome }}</span></h3>
             </div>
 
             <div class="block-title" v-if="!$root.cursoSelect">
@@ -26,7 +23,24 @@
 
           </div>
 
-          <div class="col-xs-12 col-sm-2">
+
+          <div class="col-xs-12 col-sm-2" v-if="$root.cursoSelect">
+
+            <input id="form_name" type="text" v-model="$root.disciplinaPesquisar" name="name" class="form-control" placeholder="Pesquisar" required="required" >
+
+          </div>
+
+          <div class="col-xs-12 col-sm-2" v-if="$root.cursoSelect">
+
+            <div class="form-group form-group-with-icon" >
+              <select class="form-control" v-model="$root.disciplinasComProva" style="background: #222222;">
+                <option :value="0">Todas</option>
+                <option :value="1">Com Prova</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-2" v-if="$root.cursoSelect">
 
             <div class="form-group form-group-with-icon">
               <select class="form-control" v-model="$root.gradeSelect" style="background: #222222;">
@@ -35,6 +49,7 @@
             </div>
 
           </div>
+
 
         </div>
 
@@ -82,7 +97,8 @@
 
         <div class="row">
 
-          <ItemDisciplina v-if="$root.disciplinas" v-for="disciplina in $root.disciplinas" :disciplina="disciplina"/>
+          <ItemDisciplina v-if="$root.disciplinas && ( ( $root.disciplinasComProva === 0) ? true : (disciplina.numeroProvas > 0) ) && ( disciplina.nome.toLowerCase().includes($root.disciplinaPesquisar.toLowerCase()) || disciplina.codigo.toLowerCase().includes($root.disciplinaPesquisar.toLowerCase()) )"
+                          v-for="disciplina in $root.disciplinas" :disciplina="disciplina"/>
 
         </div>
 

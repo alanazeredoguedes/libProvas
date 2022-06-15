@@ -35,6 +35,11 @@ class Disciplina
     private $gradeCurricular;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Application\LibProvas\ProvaBundle\Entity\Prova", mappedBy="disciplina")
+     */
+    private $provas;
+
+    /**
      *
      * @ORM\Column(name="codigo", type="string")
      */
@@ -59,7 +64,7 @@ class Disciplina
     private $ativo;
     
     public function __construct() {
-        
+        $this->provas = new ArrayCollection();
     }
          
     /**
@@ -74,7 +79,6 @@ class Disciplina
     {
         return (String) $this->id;
     }
-    
    
    /**
     * @return mixed
@@ -136,8 +140,22 @@ class Disciplina
         $this->ativo = $ativo;
     }
 
+    public function getProvas()
+    {
+        return $this->provas;
+    }
+
+    public function setProvas($provas): void
+    {
+        $this->provas = $provas;
+    }
+
     public function getDisciplinaGradeCurso(){
         return $this->getCodigo() . ' - ' . $this->getNome() . ' - ' . $this->getGradeCurricular()->getGrade() . ' - ' . $this->getGradeCurricular()->getCurso()->getNome() ;
+    }
+
+    public function getNumeroProvas(){
+        return count( $this->getProvas() );
     }
 
     }

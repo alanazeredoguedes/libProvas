@@ -14,6 +14,8 @@ class UploadFile
     private $targetDirectory;
     public $em;
     public $projectDir;
+    public $uploadDir = 'media/padrao/0001/01';
+
 
     private $providers = [
         'application/pdf' => 'sonata.media.provider.file',

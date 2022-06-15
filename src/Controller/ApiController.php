@@ -59,6 +59,25 @@ class ApiController extends Controller
         return new ApiRepository($this->getDoctrine());
     }
 
+    /** @Route("/infos", name="apiv2_infos") */
+    public function infos(): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $numeroCursos = $this->getCursoRepository()->createQueryBuilder('u')->select('count(u.id)')->getQuery()->getSingleScalarResult();
+        $numeroDisciplinas = $this->getDisciplinaRepository()->createQueryBuilder('u')->select('count(u.id)')->getQuery()->getSingleScalarResult();
+        $numeroProvas = $this->getProvasRepository()->createQueryBuilder('u')->select('count(u.id)')->getQuery()->getSingleScalarResult();
+
+        $response = [
+            'numeroCursos' =>  $numeroCursos,
+            'numeroDisciplinas' => $numeroDisciplinas,
+            'numeroProvas' => $numeroProvas,
+        ];
+
+        return new JsonResponse($response);
+    }
+
+
     /** @Route("/cursos", name="apiv2_cursos") */
     public function cursos(): Response
     {
@@ -86,17 +105,21 @@ class ApiController extends Controller
         return new JsonResponse($response);
     }
 
-    /** @Route("/disciplinas/{curso}", name="apiv2_disciplinas") */
-    public function disciplinas($curso): Response
+    /** @Route("/disciplinas/{id}", name="apiv2_disciplinas") */
+    public function disciplinas($id): Response
     {
-        $disciplinas = $this->getDisciplinaRepository()->findBy(['ativo' => true, 'gradeCurricular.curso' => $curso], ['nome'=> 'ASC']);
+        $disciplinas = $this->getDisciplinaRepository()->findOneBy(['ativo' => true, 'id' => $id], ['nome'=> 'ASC']);
+
+
+
 
         dd($disciplinas);
+
         $response = [];
 
-        foreach ($disciplinas as $disciplina){
+     /*   foreach ($disciplinas as $disciplina){
             $response[] = $this->getApiRepository()->DisciplinaToArray($disciplina);
-        }
+        }*/
 
         return new JsonResponse($response);
     }
@@ -115,6 +138,29 @@ class ApiController extends Controller
         return new JsonResponse($response);
     }
 
+
+
+    /** @Route("/provas_by_disciplina/{disciplina}", name="apiv2_provas_by_disciplina") */
+    public function ProvasByDisciplina($disciplina): Response
+    {
+        $disciplina = $this->getDisciplinaRepository()->findOneBy(['id' => $disciplina], []);
+
+        if(!$disciplina)
+            return new JsonResponse(['status' => 'error', 'message' => 'Disciplina não encontrada!']);
+
+        $response = [];
+
+        $provas = $this->getProvasRepository()->findBy(['disciplina' => $disciplina, 'ativa' => true], []);
+        foreach ($provas as $prova){
+            $response[] = $this->getApiRepository()->ProvasToArray($prova);
+        }
+
+
+        return new JsonResponse($response);
+    }
+
+
+
     /** @Route("/upload", name="apiv2_upload") */
     public function upload(Request $request): Response
     {
@@ -123,18 +169,26 @@ class ApiController extends Controller
 
         $arquivos = $request->files->get('provas');
         $disciplina = $request->request->get('disciplina');
+        $tipoProva = $request->request->get('tipoProva');
 
         if(!$arquivos)
             return new JsonResponse(['status' => 'error', 'message' => 'Anexe ao menos 1 arquivo!']);
 
+        if(count($arquivos) > 10)
+            return new JsonResponse(['status' => 'error', 'message' => 'Anexe no maximo 10 arquivos!']);
 
         if(!$this->isValidFilesType($arquivos))
             return new JsonResponse(['status' => 'error', 'message' => 'Tipos de arquivos invalidos! Arquivos Permitidos: [.pdf, .jpeg, .jpg, .png] ']);
 
 
+
         $disciplina = $this->getDisciplinaRepository()->findOneBy(['id' => $disciplina]);
         if(!$disciplina)
             return new JsonResponse(['status' => 'error', 'message' => 'Disciplina Não Encontrada no Sistema! Tente Novamente Mais Tarde!']);
+
+        $tipoProva = $this->getTipoProvaRepository()->findOneBy(['id' => $tipoProva]);
+        if(!$tipoProva)
+            return new JsonResponse(['status' => 'error', 'message' => 'Tipo de Prova Não Encontrada no Sistema! Tente Novamente Mais Tarde!']);
 
 
         /** Serviço de upload arquivos */
@@ -148,7 +202,7 @@ class ApiController extends Controller
 
         $prova->setArquivos($gallery);
         $prova->setDisciplina($disciplina);
-        $prova->setTipoProva(null);
+        $prova->setTipoProva($tipoProva);
         $prova->setAtiva(false);
 
         $em->persist($prova);

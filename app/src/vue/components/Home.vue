@@ -125,7 +125,7 @@
           <div class="fun-fact gray-default">
             <i class="lnr lnr-layers"></i>
             <h4>Cursos</h4>
-            <span class="fun-fact-block-value">578</span>
+            <span class="fun-fact-block-value">{{ $root.numeroCursos }}</span>
             <span class="fun-fact-block-text"></span>
           </div>
         </div>
@@ -134,7 +134,7 @@
           <div class="fun-fact gray-default">
             <i class="lnr lnr-list"></i>
             <h4>Disciplinas</h4>
-            <span class="fun-fact-block-value">4,780</span>
+            <span class="fun-fact-block-value">{{ $root.numeroDisciplinas }}</span>
             <span class="fun-fact-block-text"></span>
           </div>
         </div>
@@ -143,7 +143,7 @@
           <div class="fun-fact gray-default">
             <i class="lnr lnr-file-empty"></i>
             <h4>Provas</h4>
-            <span class="fun-fact-block-value">15</span>
+            <span class="fun-fact-block-value">{{ $root.numeroProvas }}</span>
             <span class="fun-fact-block-text"></span>
           </div>
         </div>

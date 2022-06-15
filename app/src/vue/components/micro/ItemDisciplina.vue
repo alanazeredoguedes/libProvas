@@ -1,5 +1,5 @@
 <template>
-    <div class="ItemDisciplinaComponent col-xs-12 col-sm-3">
+    <div class="ItemDisciplinaComponent col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
       <a href="javascript:void(0)" @click="escolhaDisciplina">
       <div class="certificate-item clearfix">
 <!--        <div class="certi-logo" style="width: 120px; min-width: 120px; max-width: 120px; height: 115px;">
@@ -11,13 +11,14 @@
             <h4>{{ disciplina.nome }}</h4>
           </div>
           <div class="certi-id">
+            <span>{{ disciplina.periodo }} Período - Grade: {{ disciplina.grade }}</span>
+          </div>
+          <div class="certi-id">
             <span>Codigo: {{ disciplina.codigo }}</span>
           </div>
-          <div class="certi-date">
-            <span>Grade: {{ disciplina.grade }} - {{ disciplina.periodo }} Período</span>
-          </div>
+
           <div class="certi-company">
-            <span></span>
+            <span>Provas: {{ disciplina.numeroProvas }}</span>
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@ export default {
   methods: {
 
     escolhaDisciplina(){
-      this.$root.changeDisciplinaSelect( this.disciplina ) ;
+      this.$root.disciplinaSelect = this.disciplina
     }
   }
 

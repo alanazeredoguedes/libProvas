@@ -34,8 +34,7 @@ class Prova
     private $tipoProva;
 
     /**
-     * Many Prova has One Disciplina (Disciplina).
-     * @ORM\ManyToOne(targetEntity="App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina")
+     * @ORM\ManyToOne(targetEntity="App\Application\LibProvas\DisciplinaBundle\Entity\Disciplina", inversedBy="provas")
      * @ORM\JoinColumn(name="disciplina_id", referencedColumnName="id")
      */
     private $disciplina;
@@ -99,24 +98,16 @@ class Prova
     {
         $this->tipoProva = $tipoProva;
     }
-    
-   
-   /**
-    * @return mixed
-    */
+
     public function getDisciplina()
     {
         return $this->disciplina;
     }
-    
-    /**
-     * @param mixed $disciplina
-     */
+
     public function setDisciplina($disciplina): void
     {
         $this->disciplina = $disciplina;
     }
-    
    
    /**
     * @return mixed

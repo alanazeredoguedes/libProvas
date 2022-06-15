@@ -107,6 +107,16 @@
                     <div class="help-block disciplina-select-error with-errors"></div>
                   </div>
 
+                  <label style="color: #f58545;">Selecione o Tipo de Prova</label>
+                  <div class="form-group form-group-with-icon">
+                    <select class="form-control" v-model="$root.tipoProvaEPS" style="background: #222222;" required>
+                      <option value="-1" selected="selected">Selecione o Tipo  de Prova</option>
+                      <option v-for="(tipo, index) in $root.tipos" :value="index"> {{ tipo.tipo }} </option>
+                    </select>
+                    <div class="help-block tipo-prova-select-error with-errors"></div>
+                  </div>
+
+
                   <label style="color: #f58545;">Anexe a Prova</label>
                   <div class="form-group form-group-with-icon">
                     <input type="file" multiple accept="image/png, image/jpeg, image/jpg, .pdf" class="form-control" id="provas" name="provas[]"  required="required">
@@ -114,7 +124,7 @@
                   </div>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
+<!--                <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>-->
 
 
                 <input type="button" @click="sendProva"  class="button btn-send send-prova" value="Enviar Provas!">
@@ -158,6 +168,8 @@ export default {
       let curso = root.cursoEPS
       let grade = root.gradeEPS
       let disciplina = root.disciplinaEPS
+      let tipoProva = root.tipoProvaEPS
+
       let provas = $('input#provas')
 
       if(curso === '-1'){ $('.curso-select-error').html('Escolha o Curso'); return; }
@@ -165,6 +177,8 @@ export default {
       if(grade === '-1'){ $('.grade-select-error').html('Escolha a Grade'); return; }
 
       if(disciplina === '-1'){ $('.disciplina-select-error').html('Escolha a Disciplina'); return; }
+
+      if(tipoProva === '-1'){ $('.tipo-prova-select-error').html('Escolha um Tipo de Prova'); return; }
 
       if(provas[0].files.length === 0) {
         $('.prova-select-error').html('Anexe ao menos 1 arquivo');
@@ -181,10 +195,12 @@ export default {
       let formData = new FormData( $("#formulario").get(0) );
 
       formData.append('disciplina', root.disciplinasEPO[root.disciplinaEPS].id);
+      formData.append('tipoProva', root.tipos[root.tipoProvaEPS].id);
 
       let url = this.$root.apiRoute + "/upload"
 
       $('.send-prova').prop('disabled', true);
+      $('.send-prova').prop('value', 'Enviando...');
 
       $.ajax({
         url: url,
@@ -197,9 +213,12 @@ export default {
           if(data['status'] === 'success'){
 
             $('#formulario')[0].reset();
-            root.cursoEPS = root.gradeEPS = root.disciplinaEPS = '-1'
+            root.cursoEPS = root.gradeEPS = root.disciplinaEPS = root.tipoProvaEPS = '-1'
 
-            setTimeout(()=>{ $('.curso-select-error').html('') }, 1000)
+            setTimeout(()=>{
+              $('.curso-select-error').html('')
+              $('.tipo-prova-select-error').html('')
+            }, 0)
 
             $('.messages-response').css('color', 'green')
             $('.messages-response').html(data['message'])
@@ -207,6 +226,7 @@ export default {
 
             setTimeout(()=>{ $('.messages-response').html('') }, 4000)
 
+            root.getInfos()
 
           }else{
             $('.messages-response').css('color', 'red')
@@ -215,10 +235,11 @@ export default {
             setTimeout(()=>{ $('.messages-response').html('') }, 4000)
 
           }
-
+          $('.send-prova').prop('value', 'Enviar Provas!');
           $('.send-prova').prop('disabled', false);
         },
         error: function(){
+          $('.send-prova').prop('value', 'Enviar Provas!');
           $('.send-prova').prop('disabled', false);
         }
       });

@@ -24,8 +24,20 @@ const AppVue = new Vue({
 
     data: {
         apiRoute: 'http://127.0.0.1:9004/api_v2',
+        imagesRoute: 'http://127.0.0.1:9004',
+
+        numeroCursos: '',
+        numeroDisciplinas: '',
+        numeroProvas: '',
+
+        provasDisciplina: [],
+        provaSelect: null,
+
+        disciplinasComProva: 0,
+        disciplinaPesquisar: '',
 
         tipos: [],
+        tipoProvaEPS: '-1',
 
         cursos: [],
         cursoSelect: null,
@@ -51,7 +63,15 @@ const AppVue = new Vue({
             this.updateDisciplinasByGrade(this.grades[this.gradeSelect])
             //alert(this.gradeSelect)
         },
+        disciplinaSelect(){
+            this.getProvasByDisciplina(this.disciplinaSelect.id);
+            this.changeMenu('provas');
 
+        },
+        provaSelect(){
+            this.changeMenu('ver-provas');
+            console.log(this.provaSelect)
+        },
         cursoEPS(){
             this.gradesEPO = [];
             this.gradeEPS = -1;
@@ -85,25 +105,34 @@ const AppVue = new Vue({
                 $('.disciplina-select-error').html('Escolha a Disciplina');
             }
         },
+        tipoProvaEPS(){
+            if(this.tipoProvaEPS !== '-1'){
+                $('.tipo-prova-select-error').html('');
+            }else{
+                $('.tipo-prova-select-error').html('Escolha um Tipo de Prova');
+            }
+        },
     },
 
   methods: {
+      async getInfos(){
+          let thiss = this;
+          await axios.get(this.apiRoute + '/infos').then(function (response) {
+              thiss.numeroCursos = response.data['numeroCursos']
+              thiss.numeroDisciplinas = response.data['numeroDisciplinas']
+              thiss.numeroProvas = response.data['numeroProvas']
+          })
+      },
       async getAllCursos(){
           let thiss = this;
           await axios.get(this.apiRoute + '/cursos').then(function (response) { thiss.cursos = thiss.cursosEPO = response.data; })
       },
       changeCursoSelect(curso){
+          this.cursoSelect = null;
           this.cursoSelect = curso;
           this.getGradesByCurso(this.cursoSelect.id);
 
           this.changeMenu('disciplinas');
-      },
-      changeDisciplinaSelect(disciplina){
-          this.disciplinaSelect = disciplina;
-
-          this.getProvasByDisciplina(this.disciplinaSelect.id);
-
-          this.changeMenu('provas');
       },
       async getGradesByCurso(cursoId){
           let thiss = this;
@@ -123,9 +152,12 @@ const AppVue = new Vue({
                   thiss.updateDisciplinasByGrade2(thiss.grades[0]);
               })
       },
-      getProvasByDisciplina(disciplinaId){
-          //let thiss = this;
-
+      async getProvasByDisciplina(disciplinaId){
+          let thiss = this;
+          await axios.get(this.apiRoute + '/provas_by_disciplina/' + disciplinaId).then(function (response) {
+              thiss.provasDisciplina = response.data;
+          })
+          //console.log(this.provasDisciplina)
       },
       updateDisciplinasByGrade(grade){
           this.disciplinas = [];
@@ -148,7 +180,7 @@ const AppVue = new Vue({
 
       async getTipos(){
           let thiss = this;
-          await axios.get(this.apiRoute + '/tipos').then(function (response) { thiss.tipos = response.data; })
+          await axios.get(this.apiRoute + '/tipos').then(function (response) { thiss.tipos = response.data; /*thiss.tipoProvaEPS = 0;*/ })
       },
 
 
@@ -179,6 +211,7 @@ const AppVue = new Vue({
   beforeMount(){
         this.getAllCursos()
         this.getTipos()
+        this.getInfos()
 
   },
 
@@ -192,6 +225,11 @@ const AppVue = new Vue({
 
   components:{ App }
 }).$mount('#app')
+
+
+$( document ).ready(function() {
+    //$(`.btn-home`)[0].click()
+});
 
 
 export default AppVue

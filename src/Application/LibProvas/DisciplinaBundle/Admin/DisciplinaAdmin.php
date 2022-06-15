@@ -150,6 +150,12 @@ class DisciplinaAdmin extends AbstractAdmin
                 'label' => 'Curso',
                 'associated_property' => 'nome',
             ])
+            ->add('provas', null, [
+                'label' => 'Numero de Provas',
+                'choice_label' => function ($provas) {
+                    return $provas->getNumeroProvas();
+                },
+            ])
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
